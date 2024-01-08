@@ -14,13 +14,13 @@ const MenuItem = ({ text, to }) => (
 
 export default function Header() {
   return (
-    <nav className='fixed font-bold flex justify-center items-center text-beige text-2xl pt-4 w-full'>
+    <nav className='fixed font-bold flex justify-center items-center text-beige text-2xl pt-4 w-full z-9999 backdrop-blur-sm'>
       <ul className='py-3 px-12 flex flex-row items-center justify-center bg-coffee rounded-full gap-10 shadow-xl'>
-        <MenuItem text='Home' to='/#home' />
-        <MenuItem text='Workshop' />
+        <MenuItem text='HOME' to='/#home' />
+        <MenuItem text='WORKSHOP' to='/#workshop'/>
         <MenuItem text={<img src={Logo} className='h-14' alt="Logo" />} to='/#Main' />
-        <MenuItem text='Menu' />
-        <MenuItem text='About Us' />
+        <MenuItem text='MENU' to='/#menu'/>
+        <MenuItem text='ABOUT US' to='/#about'/>
       </ul>
     </nav>
   );

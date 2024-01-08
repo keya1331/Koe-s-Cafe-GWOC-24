@@ -54,18 +54,17 @@ const Slider = () => {
     };
 
     handleResize();
-
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
-    <div className="pt-20 photoshow-slideshow relative overflow-hidden h-[100vh] mx-auto">
-      <div className="photoshow-slides flex gap-4 transition-transform duration-500 ease-in-out">
+    <div className="mt-40 mb-20 photoshow-slideshow relative overflow-hidden mx-auto z-0">
+      <div className="photoshow-slides flex gap-4 transition-transform duration-500 ease-in-out z-0">
         {[...Array(totalSlides)].map((_, index) => (
           <div key={index} className="photoshow-slide min-w-[25%]">
-            <img src={`Images/${index + 1}.jpeg`} alt={`Pottery ${index + 1}`} className="h-[90vh] w-full object-cover" />
+            <img src={`Images/${index + 1}.jpeg`} alt={`Pottery ${index + 1}`} className="h-[90vh] w-full object-cover z-0" />
           </div>
         ))}
       </div>

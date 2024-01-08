@@ -1,6 +1,24 @@
 // src/components/CoffeeWorkshop.js
 import React, { useState } from 'react';
 
+const BrewingProcessCard = ({ title, description, imageSrc }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`bg-white p-4 rounded-md shadow-md transition-transform transform ${
+        isHovered ? 'scale-105' : ''
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img src={imageSrc} alt={title} className="w-full h-auto mb-4 rounded-md" />
+      <h4 className=" mb-2 sm:text-sm lg:text-2xl font-serif font-semibold">{title}</h4>
+      {isHovered && <p className="text-gray-#513726 font-serif">{description}</p>}
+    </div>
+  );
+};
+
 const Workshop = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -19,6 +37,42 @@ const Workshop = () => {
   });
 
   const [isSubmitted, setSubmitted] = useState(false);
+
+  const brewingProcessCards = [
+    {
+      title: 'R O A S T',
+      description:
+        'During roasting, beans go through various stages: drying, first crack (audible when beans expand), and, if desired, a second crack. Roasters use different methods like air roasting or drum roasting, each influencing the final flavor profile.',
+      imageSrc: 'Images/roasting.jpg', // replace with the actual image source
+    },
+    {
+      title: 'G R I N D',
+      description:
+        'Roasted coffee beans are ground to the desired coarseness for brewing. The grind size affects the extraction process and, consequently, the flavor of the coffee.',
+      imageSrc: 'Images/grinding.jpg', // Add the image file for grinding
+    },
+    {
+      title: 'B R E W',
+      description:
+        'The ground coffee is brewed with hot water to extract flavors and create the final beverage. Brewing methods include drip brewing, espresso, French press, pour-over, and more.',
+      imageSrc: 'Images/brewing.jpg', // Add the image file for brewing
+    },
+    {
+      title: 'T A S T E',
+      description:
+        'Coffee professionals and enthusiasts often engage in a formal evaluation process known as cupping. This involves tasting and evaluating the flavors, aromas, acidity, body, and overall quality of the coffee.',
+      imageSrc: 'Images/tasting.jpg', // Add the image file for tasting
+    },
+    {
+      title: 'P A L A T E',
+      description:
+        'After the brewing process, you get to enjoy the final coffee! Whether it\'s a black coffee, espresso, cappuccino, latte, or another variation, savor the rich flavors and aromas created by the careful coffee production process.',
+      imageSrc: 'Images/final_coffee.jpg', // Add the image file for the final coffee
+    },
+
+  ];
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,35 +125,44 @@ const Workshop = () => {
     setSubmitted(true);
   };
 
+  const handleReset = () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      date: '',
+      time: '',
+    });
+
+    setErrors({
+      name: '',
+      email: '',
+      phone: '',
+      date: '',
+      time: '',
+    });
+  };
+
   return (
-    <section className="bg-warm-cozy py-16">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-semibold mb-8 text-center text-white">Upcoming Coffee Workshop</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div className="mb-4">
-            <img src="/workshop-image.jpg" alt="Workshop" className="w-full h-auto rounded-md" />
-          </div>
+    <section className="bg-[#E7DED0] py-16 z-0">
+      <div className="container mx-auto p-8 bg-#D0BCA0 rounded-md shadow-md">
+        <h2 className="text-6xl font-semibold mb-8 text-center text-#82614A" style={{ fontFamily: 'Monospace' }} >W O R K S H O P</h2>
+        <div className="grid grid-cols-1 gap-16">
+         
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-white">Join us for an immersive coffee experience!</h3>
-            <p className="text-gray-200 mb-4">
-              Explore the world of coffee with our upcoming workshop. Learn about coffee identification,
-              grading, roasting, blending, and cupping techniques from our expert baristas.
-            </p>
-            <p className="text-gray-200 mb-4">
-              Whether you're a coffee enthusiast or a beginner, this workshop is designed to deepen your
-              understanding and appreciation for the art of coffee.
-            </p>
-            <p className="text-gray-200 mb-4">
-              Don't miss out on this exciting opportunity to enhance your coffee knowledge and taste
-              some of the finest brews crafted by our skilled team.
-            </p>
+            <h3 className="text-3xl font-semibold mb-4 text-#8D765A" style={{ fontFamily:'lato, monospace' }}>Espresso Artistry Unleashed</h3><br></br>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {brewingProcessCards.map((card, index) => (
+                <BrewingProcessCard key={index} {...card} />
+              ))}
+            </div>
             {isSubmitted ? (
-              <p className="text-green-500 font-semibold mb-4">Thank you for reserving your spot! We'll see you at the workshop.</p>
+              <p className="text-#82614A font-serif font-semibold mt-4 sm:text-sm lg:text-3xl">Thank you for reserving your spot! We'll see you at the workshop.</p>
             ) : (
               <form onSubmit={handleSubmit} className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label htmlFor="date" className="text-white block mb-2">Preferred Date</label>
+                    <label htmlFor="date" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-2xl font-mono">Preferred Date</label>
                     <input
                       type="date"
                       id="date"
@@ -111,7 +174,7 @@ const Workshop = () => {
                     {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date}</p>}
                   </div>
                   <div>
-                    <label htmlFor="time" className="text-white block mb-2">Preferred Time</label>
+                    <label htmlFor="time" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-2xl font-family: 'poppins">Preferred Time</label>
                     <input
                       type="time"
                       id="time"
@@ -124,7 +187,7 @@ const Workshop = () => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="name" className="text-white block mb-2">Your Name</label>
+                  <label htmlFor="name" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-2xl font-mono">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -136,7 +199,7 @@ const Workshop = () => {
                   {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="email" className="text-white block mb-2">Your Email</label>
+                  <label htmlFor="email" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-2xl font-mono">Your Email</label>
                   <input
                     type="email"
                     id="email"
@@ -148,7 +211,7 @@ const Workshop = () => {
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="phone" className="text-white block mb-2">Your Phone</label>
+                  <label htmlFor="phone" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-2xl font-mono">Your Phone</label>
                   <input
                     type="tel"
                     id="phone"
@@ -159,12 +222,29 @@ const Workshop = () => {
                   />
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                 </div>
+                <div className="mb-4">
+                  <label htmlFor="description" className="text-#3B1C0A block mb-2 sm:text-sm lg:text-4xl font-serif font-semibold">Event Description</label><br></br>
+                  <p className="text-gray-#513726 mb-4 sm:text-sm lg:text-2xl font-serif">
+                  Embark on a sensory journey with our exclusive coffee processing event – a symphony of flavors, artfully curated for coffee enthusiasts. Dive into the alchemy of roasting, grinding, brewing, and tasting, each step a brushstroke in the canvas of coffee creation. Join us in discovering the secrets behind the perfect cup, guided by our expert baristas. Immerse yourself in the rich aromas, textures, and stories that unfold in every sip. Elevate your coffee experience; it's not just a workshop – it's a masterpiece in the making. </p>
+                </div><br></br>
+
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+                  className="bg-black text-white py-2 px-4 rounded-md hover:bg-#82614A focus:outline-none focus:ring focus:border-#82614A"
                 >
                   Reserve Your Spot
                 </button>
+                <button
+                  type="button"
+                  className="bg-black text-white py-2 px-4 rounded-md ml-2 hover:bg-black focus:outline-none focus:ring focus:border-#82614A"
+                  onClick={handleReset}
+                >
+                  Reset
+                </button>
+
+               
+
+               
               </form>
             )}
           </div>
@@ -172,6 +252,6 @@ const Workshop = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Workshop;

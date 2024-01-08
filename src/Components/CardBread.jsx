@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-export const CardBread = () => {
+import imgBread1 from '../Images/bread1.jpg';
+import imgBread2 from '../Images/bread2.jpg';
+import imgBread3 from '../Images/bread3.jpg';
+import imgBread4 from '../Images/bread4.jpg';
+import imgBread5 from '../Images/bread5.jpg';
 
-    const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
-    
+export const CardBread = () => {
+    const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+
     return (
         <div className="embla" ref={emblaRef}>
             <div className="embla__container">
@@ -13,7 +18,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread1.jpg'
+                            src={imgBread1}
                             alt="bread1"
                         />
                     </div>
@@ -22,7 +27,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread2.jpg'
+                            src={imgBread2}
                             alt="bread2"
                         />
                     </div>
@@ -31,7 +36,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread2.jpg'
+                            src={imgBread2}
                             alt="bread2"
                         />
                     </div>
@@ -40,7 +45,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread3.jpg'
+                            src={imgBread3}
                             alt="bread3"
                         />
                     </div>
@@ -49,7 +54,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread4.jpg'
+                            src={imgBread4}
                             alt="bread4"
                         />
                     </div>
@@ -58,7 +63,7 @@ export const CardBread = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src='public/Images/bread5.jpg'
+                            src={imgBread5}
                             alt="bread5"
                         />
                     </div>

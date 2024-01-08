@@ -10,30 +10,32 @@ const Typewriter = ({ text }) => {
       setDisplayText((prevText) => prevText + text[index]);
       index++;
 
-      if (index === text.length - 1) {
+      if (index === text.length-1) {
         clearInterval(intervalId);
+        startBlinkingCursor();
       }
     }, 175);
 
     return () => clearInterval(intervalId);
   }, [text]);
 
-  useEffect(() => {
+  const startBlinkingCursor = () => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
     }, 500);
 
-    return () => clearInterval(cursorInterval);
-  }, []);
+    setTimeout(() => {
+      clearInterval(cursorInterval);
+      setShowCursor(false);
+    }, 5000);
+  };
 
   const decodedText = displayText.replace(/&apos;/g, "'").replace(/&quot;/g, '"');
 
   return (
-    <div className='animation_layer parallax text-6xl font-semibold text-white relative'>
+    <div className='animation_layer parallax text-6xl font-semibold text-beige relative'>
       <div className='inline-block'>{decodedText}</div>
-      {showCursor && <span className='inline-block w-1 h-15 bg-white'>&nbsp;</span>}
+      {showCursor && <span className='inline-block w-1 h-15 bg-coffee'>&nbsp;</span>}
     </div>
   );
 };
-
-export default Typewriter;

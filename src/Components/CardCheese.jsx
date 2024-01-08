@@ -2,11 +2,11 @@ import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
-import cheese1 from 'Images/cheese1.jpg';
-import cheese2 from 'Images/cheese2.jpg';
-import cheese3 from 'Images/cheese3.jpg';
-import cheese4 from 'Images/cheese4.jpg';
-import cheese5 from 'Images/cheese5.jpg';
+import imgCheese1 from '../Images/cheese1.jpg';
+import imgCheese2 from '../Images/cheese2.jpg';
+import imgCheese3 from '../Images/cheese3.jpg';
+import imgCheese4 from '../Images/cheese4.jpg';
+import imgCheese5 from '../Images/cheese5.jpg';
 
 export const CardCheese = () => {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
@@ -18,7 +18,7 @@ export const CardCheese = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src={cheese1}
+                            src={imgCheese1}
                             alt="cheese1"
                         />
                     </div>
@@ -27,7 +27,7 @@ export const CardCheese = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src={cheese2}
+                            src={imgCheese2}
                             alt="cheese2"
                         />
                     </div>
@@ -36,7 +36,7 @@ export const CardCheese = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src={cheese3}
+                            src={imgCheese3}
                             alt="cheese3"
                         />
                     </div>
@@ -45,7 +45,7 @@ export const CardCheese = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src={cheese4}
+                            src={imgCheese4}
                             alt="cheese4"
                         />
                     </div>
@@ -54,7 +54,7 @@ export const CardCheese = () => {
                     <div className="h-40 w-full flex items-center justify-center overflow-hidden rounded-xl">
                         <img
                             className='rounded-xl'
-                            src={cheese5}
+                            src={imgCheese5}
                             alt="cheese5"
                         />
                     </div>

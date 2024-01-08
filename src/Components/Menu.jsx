@@ -1,13 +1,14 @@
 import React from 'react';
-import CardCoffee from 'src/Components/CardCoffee.jsx';
-import CardBread from 'src/Components/CardBread.jsx';
-import CardCheese from 'src/Components/CardCheese.jsx';
-import KoeCafeFood from 'src/Images/KoeCafeFood.pdf';
+import CardCoffee from './CardCoffee';
+import CardBread from './CardBread';
+import CardCheese from './CardCheese';
+
+import KoeCafeFood from '../Images/KoeCafeFood.pdf'
 
 const Menu = () => {
     return (
         <div>
-            <div className='w-full bg-[#3B1C0A] pt-8 mb-0 md:h-[350px] h-[495px]'>
+            <div className='w-full bg-coffee pt-8 mb-0 md:h-[350px] h-[495px]'>
                 <h1 className="text-4xl font-semibold text-center md:mt-4 mt-8 mb-4 text-white">Menu</h1>
                 <div className='max-w-[740px] mx-auto md:pt-6 md:pb-4 py-14'>
                     <p className="text-center text-white md:mx-0 mx-4">
@@ -40,7 +41,7 @@ const Menu = () => {
                     </div>
                     <div className='flex justify-center md:pt-0 py-8'>
                         <button
-                            onClick={() => window.open({KoeCafeFood}, '_blank')}
+                            onClick={() => window.open(KoeCafeFood, '_blank')}
                             className="bg-[#3B1C0A] md:w-[528px] w-[340px] text-[#ece0d1] py-2 rounded-xl hover:bg-[#b89d65] hover:text-[#3B1C0A]">
                             View Menu
                         </button>
@@ -52,4 +53,4 @@ const Menu = () => {
     );
 };
 
-export default Menu;
+export default Menu;

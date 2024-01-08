@@ -12,6 +12,7 @@
     "embla-carousel-autoplay": "^8.0.0-rc18",
     "embla-carousel-react": "^8.0.0-rc18",
     "react": "^18.2.0",
+    "react-animated-css-onscroll": "^1.2.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-reveal": "^1.2.2",

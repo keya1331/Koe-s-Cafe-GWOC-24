@@ -5,6 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 // Desktop Components
 import Home from "./Components/Slider";
 import Header from "./Components/Header";
+import Menu from './Components/Menu';
+import Workshop from './Components/Workshop'
 import About from './Components/About';
 import Footer from './Components/Footer';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
@@ -55,55 +57,67 @@ const Typewriter = ({ text }) => {
   );
 };
 
-
 function App() {
   return (
+
     <BrowserRouter>
 
       <div className="App">
 
-        <div className='desktop hidden lg:block'>
+        <div className='desktop hidden lg:block bg-[#E7DED0]'>
 
-        <Parallax pages={4} style={{ top: '0', left: '0' }} className='sm:hidden animation bg-yellow-100'>
+        <div className="z-0">
+          <Header />
+        </div>
 
-          <ParallaxLayer offset={0}>
-            <div className='animation_layer parallax' id='background'></div>
-          </ParallaxLayer>
+        <div className="parallaxer z-0">
 
-          <ParallaxLayer offset={0}  speed={1} id='Main'>
-            <div className='animation_layer parallax' id='layer3'></div>
-          </ParallaxLayer>
+          <Parallax pages={1.5} style={{ top: '0', left: '0' }} className='sm:hidden animation bg-yellow-100'>
 
-          <ParallaxLayer offset={0}  speed={1.25}>
-            <div className='animation_layer parallax' id='layer2'></div>
-          </ParallaxLayer>
+            <ParallaxLayer offset={0}>
+              <div className='animation_layer parallax' id='background'></div>
+            </ParallaxLayer>
 
-          <ParallaxLayer offset={0}  speed={1.5}>
-            <div className='animation_layer parallax' id='layer1'></div>
-          </ParallaxLayer>
+            <ParallaxLayer offset={0}  speed={1} id='Main'>
+              <div className='animation_layer parallax' id='layer3'></div>
+            </ParallaxLayer>
 
-          <ParallaxLayer offset={0.62}  speed={2.5} className='text-center'>
-            <Typewriter text="  Welcome to Koe's Kafe"/>
-          </ParallaxLayer>
+            <ParallaxLayer offset={0}  speed={1.25}>
+              <div className='animation_layer parallax' id='layer2'></div>
+            </ParallaxLayer>
 
-          <ParallaxLayer sticky={{ start: 0, end: 6 }}>
-            <Header />
-          </ParallaxLayer>
+            <ParallaxLayer offset={0}  speed={1.5}>
+              <div className='animation_layer parallax' id='layer1'></div>
+            </ParallaxLayer>
 
-          <ParallaxLayer offset={1.175} id='home' className='text-5xl text-center font-semibold'>
-            <Typewriter text="  Some Glimpses..."/>
+            <ParallaxLayer offset={0.62}  speed={2.5} className='text-center'>
+              <Typewriter text="  Welcome to Koe's Kafe" textColor="white" cursorColor="red"/>
+            </ParallaxLayer>
+
+          </Parallax>
+
+        </div>
+
+          <div className='pt-[800px] z-0' id='home'>
             <Home />
-          </ParallaxLayer>
+          </div>
 
-          <ParallaxLayer offset={2.5} factor={0.5}>
+          <div className="z-0 pt-8" id='menu'>
+            <Menu />
+          </div>
+
+          <div className="z-0 pt-8" id='workshop'>
+            <Workshop />
+          </div>
+
+          <div className="About" id='about'>
             <About />
-          </ParallaxLayer>
+          </div>
 
-          <ParallaxLayer offset={3.5} factor={0.5}>
+          <div className="footer z-100">
             <Footer />
-          </ParallaxLayer>
+          </div>
 
-        </Parallax>
         </div>
 
         <div className='mobile lg:hidden scroll-smooth'>
