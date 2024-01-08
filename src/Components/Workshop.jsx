@@ -146,7 +146,7 @@ const Workshop = () => {
   return (
     <section className="bg-[#E7DED0] py-16 z-0">
       <div className="container mx-auto p-8 bg-#D0BCA0 rounded-md shadow-md">
-        <h2 className="text-6xl font-semibold mb-8 text-center text-#82614A" style={{ fontFamily: 'Monospace' }} >W O R K S H O P</h2>
+        <h2 className="text-3xl md:text-6xl font-semibold mb-8 text-center text-#82614A" style={{ fontFamily: 'Monospace' }} >W O R K S H O P</h2>
         <div className="grid grid-cols-1 gap-16">
          
           <div>

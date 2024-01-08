@@ -13,7 +13,6 @@ import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Mobile Components
 import MHome from './Components/MHome';
-import MMenu from './Components/MMenu';
 import MHeader from './Components/MHeader';
 import MSlider from './Components/MSlider';
 
@@ -101,7 +100,7 @@ function App() {
 
           <div className='pt-[800px]'></div>
 
-          <div className='z-10' id='home'>
+          <div className='pt-[10px] z-10' id='home'>
             <Home />
           </div>
 
@@ -137,11 +136,16 @@ function App() {
 
             <div className="MSlider">
               <MSlider></MSlider>
+              
             </div>
 
-            {/* <div id='MMenu' className="MMenu h-[50%]">
-              <MMenu></MMenu>
-            </div> */}
+            <div id='MMenu'>
+              <Menu></Menu>
+            </div>
+
+            <div id='MWorkshop'>
+              <Workshop />
+            </div>
 
           </div>
 
