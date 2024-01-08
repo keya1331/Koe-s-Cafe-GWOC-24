@@ -43,22 +43,7 @@ const Slider = () => {
     return () => clearInterval(interval);
   }, [currentSlide]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 768) {
-        setTotalSlides(3); // Adjust the number of slides for small screens
-      } else {
-        setTotalSlides(10); // Default number of slides for larger screens
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
+ 
   return (
     <div className="mt-40 mb-20 photoshow-slideshow relative overflow-hidden mx-auto z-0">
       <div className="photoshow-slides flex gap-4 transition-transform duration-500 ease-in-out z-0">

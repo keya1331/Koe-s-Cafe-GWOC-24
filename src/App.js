@@ -67,7 +67,7 @@ function App() {
 
         <div className='desktop hidden lg:block bg-[#E7DED0]'>
 
-        <div className="z-0">
+        <div className="z-auto">
           <Header />
         </div>
 
@@ -99,15 +99,17 @@ function App() {
 
         </div>
 
-          <div className='pt-[800px] z-0' id='home'>
+          <div className='pt-[800px] z-10' id='home'>
             <Home />
           </div>
 
-          <div className="z-0 pt-8" id='menu'>
-            <Menu />
+          <div className="z-20" id='menu'>
+            <div className='pt-32'>
+              <Menu />
+            </div>
           </div>
 
-          <div className="z-0 pt-8" id='workshop'>
+          <div className="z-30 pt-8" id='workshop'>
             <Workshop />
           </div>
 
@@ -115,7 +117,7 @@ function App() {
             <About />
           </div>
 
-          <div className="footer z-100">
+          <div className="footer z-40">
             <Footer />
           </div>
 
