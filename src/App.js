@@ -17,6 +17,7 @@ import MMenu from './Components/MMenu';
 import MHeader from './Components/MHeader';
 import MSlider from './Components/MSlider';
 
+
 const Typewriter = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
