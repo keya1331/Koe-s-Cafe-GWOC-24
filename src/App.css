@@ -1,0 +1,85 @@
+.App {
+  text-align: auto;
+}
+
+.animation_layer {
+  background-position: bottom center;
+  background-size: auto 1038px;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
+  
+}
+
+.animation{
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+.animation, .animation_layer{
+  height: 950px;
+}
+
+.animation_layer.parallax{
+  position: fixed;
+}
+
+#background{
+  background-image: url('./Images/landing2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+#layer3{
+  background-image: url('./Images/Layer3.png');
+}
+#layer2{
+  background-image: url('./Images/Layer2.png');
+}
+#layer1{
+  background-image: url('./Images/Layer1.png');
+}
+
+
+#Mbackground{
+  background-image: url('./Images/landing2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+#Mlayer3{
+  background-image: url('./Images/Layer3.png');
+}
+#Mlayer2{
+  background-image: url('./Images/Layer2.png');
+}
+#Mlayer1{
+  background-image: url('./Images/Layer1.png');
+}
+
+
+.Manimation_layer {
+  background-position: bottom center;
+  background-size: auto 450px;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
+  
+}
+
+.Manimation{
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+.Manimation, .Manimation_layer{
+  height: 400px;
+}
+
+.Manimation_layer.Mparallax{
+  position: fixed;
+}
