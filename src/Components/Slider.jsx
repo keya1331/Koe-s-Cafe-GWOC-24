@@ -1,60 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const Slider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [totalSlides, setTotalSlides] = useState(10);
-  const slidesPerPage = 4;
+export default function MSlider() {
+  const sliderRef = useRef(null);
 
-  const showSlide = (index) => {
-    const slides = document.querySelector('.photoshow-slides');
-
-    if (index < 0) {
-      setCurrentSlide(totalSlides - slidesPerPage);
-    } else if (index >= totalSlides - slidesPerPage + 1) {
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(index);
-    }
-
-    slides.style.transform = `translateX(${-currentSlide * (100 / slidesPerPage)}%)`;
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
   };
 
-  const prevSlide = () => {
-    showSlide(currentSlide - 1);
-  };
-
-  const nextSlide = () => {
-    showSlide(currentSlide + 1);
-  };
-
-  document.onkeydown = (e) => {
-    if (e.keyCode === 37) {
-      prevSlide();
-    } else if (e.keyCode === 39) {
-      nextSlide();
-    }
-  };
+  const images = [
+    './Images/1.jpeg',
+    './Images/2.jpeg',
+    './Images/3.jpeg',
+    './Images/4.jpeg',
+    './Images/5.jpeg',
+    './Images/6.jpeg',
+    './Images/7.jpeg',
+    './Images/8.jpeg',
+    './Images/9.jpeg',
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, []);
 
- 
   return (
-    <div className="mt-40 mb-20 photoshow-slideshow relative overflow-hidden mx-auto z-0">
-      <div className="photoshow-slides flex gap-4 transition-transform duration-500 ease-in-out z-0">
-        {[...Array(totalSlides)].map((_, index) => (
-          <div key={index} className="photoshow-slide min-w-[25%]">
-            <img src={`Images/${index + 1}.jpeg`} alt={`Pottery ${index + 1}`} className="h-[90vh] w-full object-cover z-0" />
-          </div>
-        ))}
+    <div className="w-[90%] mx-auto mt-32 z-0">
+      <div>
+        <Slider ref={sliderRef} {...settings}>
+          {images.map((image, index) => (
+            <div key={index} className="overflow-hidden">
+              <img className="h-[650px]" src={image} alt={`Slide ${index + 1}`} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
-};
-
-export default Slider;
+}

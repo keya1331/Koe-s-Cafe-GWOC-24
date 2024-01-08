@@ -99,7 +99,9 @@ function App() {
 
         </div>
 
-          <div className='pt-[800px] z-10' id='home'>
+          <div className='pt-[800px]'></div>
+
+          <div className='z-10' id='home'>
             <Home />
           </div>
 
@@ -137,9 +139,9 @@ function App() {
               <MSlider></MSlider>
             </div>
 
-            <div id='MMenu' className="MMenu h-[50%]">
+            {/* <div id='MMenu' className="MMenu h-[50%]">
               <MMenu></MMenu>
-            </div>
+            </div> */}
 
           </div>
 
