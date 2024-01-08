@@ -9,6 +9,8 @@ import Menu from './Components/Menu';
 import Workshop from './Components/Workshop'
 import About from './Components/About';
 import Footer from './Components/Footer';
+import Testimonials from './Components/testimonial';
+// import Popup from './Components/popup';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 // Mobile Components
@@ -114,6 +116,10 @@ function App() {
             <Workshop />
           </div>
 
+          <div>
+              <Testimonials />
+            </div>
+
           <div className="About" id='about'>
             <About />
           </div>
@@ -136,7 +142,6 @@ function App() {
 
             <div className="MSlider">
               <MSlider></MSlider>
-              
             </div>
 
             <div id='MMenu'>
@@ -145,6 +150,10 @@ function App() {
 
             <div id='MWorkshop'>
               <Workshop />
+            </div>
+
+            <div>
+              <Testimonials />
             </div>
 
           </div>
