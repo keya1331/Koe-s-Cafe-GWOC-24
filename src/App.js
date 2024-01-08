@@ -156,6 +156,14 @@ function App() {
               <Testimonials />
             </div>
 
+            <div className="About" id='MAbout'>
+              <About />
+            </div>
+
+            <div className="footer z-40">
+              <Footer />
+            </div>
+
           </div>
 
         </div>

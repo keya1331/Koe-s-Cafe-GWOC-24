@@ -14,8 +14,8 @@ const MenuItem = ({ text, to }) => (
 
 export default function MHeader() {
   return (
-    <nav className='fixed z-50 left-0 font-semibold flex justify-center items-center text-beige text-xs pt-5 w-full'>
-      <ul className='w-max py-[6px] flex flex-row items-center justify-center bg-coffee rounded-full shadow-xl'>
+    <nav className='fixed z-50 top-0 font-semibold flex justify-center items-center text-beige text-xs pt-5 w-full'>
+      <ul className='w-max py-[6px] flex items-center justify-center bg-coffee rounded-full shadow-xl'>
         <MenuItem text='Home' to='/#MHome' />
         <MenuItem text='Workshop' to='/#MWorkshop'/>
         <img src={Logo} className='h-[25px]' alt="Logo" />

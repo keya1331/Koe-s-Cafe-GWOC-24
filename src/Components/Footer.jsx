@@ -1,12 +1,15 @@
 import React from 'react';
 import {
-    FaFacebookSquare,
-    FaGithubSquare,
+    // FaFacebookSquare,
+    // FaGithubSquare,
     FaInstagram,
-    FaTwitterSquare,
-    FaLinkedin
+    // FaTwitterSquare,
+    // FaLinkedin
 } from 'react-icons/fa'
 
+const redirect = () => {
+    window.open('https://www.instagram.com/koethekafe/', '_blank')
+}
 
 const Footer = () => {
     return (
@@ -16,11 +19,7 @@ const Footer = () => {
                 <p className='w-full text-xl font-semibold text-[#a08a6f] tracking-wide'>The Kafe</p>
                 <p className='py-4'>205, International Finance Centre, VIP Road, opp. Fire Station, Vesu Surat, Gujarat 395007</p>
                 <div className='flex justify-between md:w-[100%] my-6'>
-                    <FaInstagram size={30} className='hover:text-white' />
-                    <FaFacebookSquare size={30} className='hover:text-white' />
-                    <FaTwitterSquare size={30} className='hover:text-white' />
-                    <FaLinkedin size={30} className='hover:text-white' />
-                    <FaGithubSquare size={30} className='hover:text-white' />
+                    <FaInstagram size={40} className='hover:text-white' onClick={redirect}/>
                 </div>
             </div>
             <div className='relative h-full w-full'>
