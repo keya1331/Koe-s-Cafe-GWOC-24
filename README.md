@@ -20,15 +20,23 @@ to reflect the cozy, handwritten charm of the actual cafe.
 ## design snapshots 
 visuals created for the koe’s cafe experience ↓
 
+## design snapshots 
+handcrafted visuals for koe’s cafe digital space ↓
+
 <p align="center">
   <img src="screens/c1.jpg" alt="home screen" height="200px"/>
-  <img src="screens/c2.jpg" alt="menu" height="200px"/>
-  <img src="screens/c3.jpg" alt="workshop card" height="200px"/>
-  <img src="screens/c4.jpg" alt="workshop card" height="200px"/>
-  <img src="screens/c5.jpg" alt="workshop card" height="200px"/>
-  <img src="screens/c6.jpg" alt="workshop card" height="200px"/>
-  <img src="screens/c7.jpg" alt="workshop card" height="200px"/>
+  <img src="screens/c2.jpg" alt="menu section" height="200px"/>
+  <img src="screens/c3.jpg" alt="workshop - roast" height="200px"/>
+</p>
 
+<p align="center">
+  <img src="screens/c4.jpg" alt="workshop - grind" height="200px"/>
+  <img src="screens/c5.jpg" alt="workshop - brew" height="200px"/>
+  <img src="screens/c6.jpg" alt="workshop - taste" height="200px"/>
+</p>
+
+<p align="center">
+  <img src="screens/c7.jpg" alt="workshop - palette" height="200px"/>
 </p>
 
 ---
