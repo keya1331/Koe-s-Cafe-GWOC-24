@@ -1,4 +1,4 @@
-# brew ☕  
+# brew 
 a website for koe’s cafe - where design meets coffee and code.
 
 ---
